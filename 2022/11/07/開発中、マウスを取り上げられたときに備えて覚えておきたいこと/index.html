@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>開発中、マウスを取り上げられたときに備えて覚えておきたいこと | HappyHackingTimes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前置き 覚えよ。さらば救われん intelliJのプラグインの活用：Key Promoter X ショートカットの候補をリスト表示：control + T ショートカットをキーワード検索：command + shift + A プロジェクトに関わるすべての検索：shift 2回連続で押す   独断と偏見のショートカット集 変数名を変更する：shift + F6 選択文字列に合致する位置にカーソ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開発中、マウスを取り上げられたときに備えて覚えておきたいこと">
+<meta property="og:url" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/index.html">
+<meta property="og:site_name" content="HappyHackingTimes">
+<meta property="og:description" content="前置き 覚えよ。さらば救われん intelliJのプラグインの活用：Key Promoter X ショートカットの候補をリスト表示：control + T ショートカットをキーワード検索：command + shift + A プロジェクトに関わるすべての検索：shift 2回連続で押す   独断と偏見のショートカット集 変数名を変更する：shift + F6 選択文字列に合致する位置にカーソ">
+<meta property="og:locale">
+<meta property="og:image" content="https://www.jetbrains.com/idea/img/idea-edu.svg">
+<meta property="og:image" content="https://plugins.jetbrains.com/files/9792/screenshot_18945.png">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/listview.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/Search.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/rename.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/command+G.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/command-n.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/command-1.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/diff.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/option-enter.gif">
+<meta property="og:image" content="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/option-enter-2.gif">
+<meta property="article:published_time" content="2022-11-06T22:46:15.000Z">
+<meta property="article:modified_time" content="2022-11-06T23:08:59.537Z">
+<meta property="article:author" content="suzusuke">
+<meta property="article:tag" content="developer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.jetbrains.com/idea/img/idea-edu.svg">
+  
+    <link rel="alternate" href="/atom.xml" title="HappyHackingTimes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">HappyHackingTimes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://happyhackingtimes.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-開発中、マウスを取り上げられたときに備えて覚えておきたいこと" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-11-06T22:46:15.000Z" itemprop="datePublished">2022-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      開発中、マウスを取り上げられたときに備えて覚えておきたいこと
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <!-- TOC -->
+<ul>
+<li><a href="#">前置き</a></li>
+<li><a href="#">覚えよ。さらば救われん</a><ul>
+<li><a href="#">intelliJのプラグインの活用：Key Promoter X</a></li>
+<li><a href="#">ショートカットの候補をリスト表示：control + T</a></li>
+<li><a href="#">ショートカットをキーワード検索：command + shift + A</a></li>
+<li><a href="#">プロジェクトに関わるすべての検索：shift 2回連続で押す</a></li>
+</ul>
+</li>
+<li><a href="#">独断と偏見のショートカット集</a><ul>
+<li><a href="#">変数名を変更する：shift + F6</a></li>
+<li><a href="#">選択文字列に合致する位置にカーソルをあてる：control + G</a></li>
+<li><a href="#">カーソルを指定方向に増やす：option 押したあとに option + ↑&#x2F;↓</a></li>
+<li><a href="#">新規ファイル作成：command + N</a></li>
+<li><a href="#">エクスプローラーにフォーカス&#x2F;表示・非表示：command + 1</a>1</li>
+</ul>
+</li>
+<li><a href="#">変数呼び出し元に遷移：command + B</a></li>
+<li><a href="#">変数呼び出し先を検索：option + F7</a><ul>
+<li><a href="#">コードの折りたたみ&#x2F;展開：command + shift + -&#x2F;+</a></li>
+<li><a href="#">option + →&#x2F;←で動く分だけ削除：option + delete</a></li>
+<li><a href="#">ファイル全体のコード整形：option + command + L</a></li>
+<li><a href="#">コードの移動：option + shift + ↑&#x2F;↓</a></li>
+<li><a href="#">関数の移動：command + shift + ↑&#x2F;↓</a></li>
+<li><a href="#">タブの移動：command + shift + { &#x2F; }</a></li>
+<li><a href="#">ウインドウの移動：option + (shift) + tab</a></li>
+<li><a href="#">選択した対象の差分を表示：対象を選択して command + D</a></li>
+<li><a href="#">カンマ区切りの要素を交換：option + shift + command + →&#x2F;←</a></li>
+<li><a href="#">下の行を持ってきて一行にする：control + shift + J</a></li>
+</ul>
+</li>
+<li><a href="#">コンテキストアクション</a><ul>
+<li><a href="#">インターフェイスに準拠するメンバーの実装：option + enter</a></li>
+<li><a href="#">存在しないクラス等の作成：option + enter</a><!-- TOC --></li>
+</ul>
+</li>
+</ul>
+<h1 id="前置き"><a href="#前置き" class="headerlink" title="前置き"></a>前置き</h1><p>実プロジェクトではIntelliJをメインに開発を進めることになると思います。</p>
+<p><img src="https://www.jetbrains.com/idea/img/idea-edu.svg" alt="intellij"></p>
+<p>基本操作はVSCodeなど他のIDEと変わることはありませんが、大きな利点として充実したショートカット機能が挙げられます。</p>
+<p>ここではそのショートカットについて何を実際に使っているか？を使用シーンをGifで示しながら列挙します。<br>（随時更新します‥ﾀﾌﾞﾝ）</p>
+<p>これらのショートカットを使いこなすことで開発スピードが上がること間違いなし！<br>また、VSCodeでも拡張機能があるみたい（<strong><strong>IntelliJ IDEA Keybindings</strong></strong>）です。<br>ぜひ活用してみてください。</p>
+<span id="more"></span>
+
+<h1 id="覚えよ。さらば救われん"><a href="#覚えよ。さらば救われん" class="headerlink" title="覚えよ。さらば救われん"></a>覚えよ。さらば救われん</h1><p>とは言いつつもショートカットをすべて最初から覚える必要はありません。<br>何ができるかを把握さえすればいくつかの手段で該当の操作が行えます。</p>
+<h2 id="intelliJのプラグインの活用：Key-Promoter-X"><a href="#intelliJのプラグインの活用：Key-Promoter-X" class="headerlink" title="intelliJのプラグインの活用：Key Promoter X"></a>intelliJのプラグインの活用：Key Promoter X</h2><p><a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/plugin/9792-key-promoter-x">https://plugins.jetbrains.com/plugin/9792-key-promoter-x</a></p>
+<p>ショートカットを使わずに操作すると親切にポップアップされる（画面右下）プラグインです。<br>ウザかったらショートカットを覚えるんだ。</p>
+<p><img src="https://plugins.jetbrains.com/files/9792/screenshot_18945.png" alt="Key Promoter X"></p>
+<h2 id="ショートカットの候補をリスト表示：control-T"><a href="#ショートカットの候補をリスト表示：control-T" class="headerlink" title="ショートカットの候補をリスト表示：control + T"></a>ショートカットの候補をリスト表示：control + T</h2><p>表示されるリファクタリングリストから変数の変更を選択しています。</p>
+<img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/listview.gif" class="">
+
+<h2 id="ショートカットをキーワード検索：command-shift-A"><a href="#ショートカットをキーワード検索：command-shift-A" class="headerlink" title="ショートカットをキーワード検索：command + shift + A"></a>ショートカットをキーワード検索：command + shift + A</h2><p>検索ワードは日本語も一応、使えます。</p>
+<h2 id="プロジェクトに関わるすべての検索：shift-2回連続で押す"><a href="#プロジェクトに関わるすべての検索：shift-2回連続で押す" class="headerlink" title="プロジェクトに関わるすべての検索：shift 2回連続で押す"></a>プロジェクトに関わるすべての検索：shift 2回連続で押す</h2><p>gifではファイル名を検索して表示してますが、他にもあらゆる検索が可能です。</p>
+<img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/Search.gif" class="">
+
+<h1 id="独断と偏見のショートカット集"><a href="#独断と偏見のショートカット集" class="headerlink" title="独断と偏見のショートカット集"></a>独断と偏見のショートカット集</h1><p>経験的に使うシーンが多いものを列挙しています。<br>順番に意味はありません。使えると思ったものを覚えてとにかく使いましょう！</p>
+<h2 id="変数名を変更する：shift-F6"><a href="#変数名を変更する：shift-F6" class="headerlink" title="変数名を変更する：shift + F6"></a>変数名を変更する：shift + F6</h2><p>該当変数をファイルをまたいで変更してくれます。</p>
+<img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/rename.gif" class="">
+
+<h2 id="選択文字列に合致する位置にカーソルをあてる：control-G"><a href="#選択文字列に合致する位置にカーソルをあてる：control-G" class="headerlink" title="選択文字列に合致する位置にカーソルをあてる：control + G"></a>選択文字列に合致する位置にカーソルをあてる：control + G</h2><img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/command+G.gif" class="">
+
+<h2 id="カーソルを指定方向に増やす：option-押したあとに-option-↑-x2F-↓"><a href="#カーソルを指定方向に増やす：option-押したあとに-option-↑-x2F-↓" class="headerlink" title="カーソルを指定方向に増やす：option 押したあとに option + ↑&#x2F;↓"></a>カーソルを指定方向に増やす：option 押したあとに option + ↑&#x2F;↓</h2><h2 id="新規ファイル作成：command-N"><a href="#新規ファイル作成：command-N" class="headerlink" title="新規ファイル作成：command + N"></a>新規ファイル作成：command + N</h2><img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/command-n.gif" class="">
+
+<h2 id="エクスプローラーにフォーカス-x2F-表示・非表示：command-1"><a href="#エクスプローラーにフォーカス-x2F-表示・非表示：command-1" class="headerlink" title="エクスプローラーにフォーカス&#x2F;表示・非表示：command + 1"></a>エクスプローラーにフォーカス&#x2F;表示・非表示：command + 1</h2><img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/command-1.gif" class="">
+
+<p>フォーカスした状態では上下キーが効くのでそのまま対象ファイルを開くことも可能です。</p>
+<h1 id="変数呼び出し元に遷移：command-B"><a href="#変数呼び出し元に遷移：command-B" class="headerlink" title="変数呼び出し元に遷移：command + B"></a>変数呼び出し元に遷移：command + B</h1><h1 id="変数呼び出し先を検索：option-F7"><a href="#変数呼び出し先を検索：option-F7" class="headerlink" title="変数呼び出し先を検索：option + F7"></a>変数呼び出し先を検索：option + F7</h1><p>変数は複数箇所から呼び出されるのが常なのでツリー状でどこからかを示してくれます。</p>
+<p>呼び出しの大元から検索できるときはcommand + Bで可能（こっちの方が楽かも）</p>
+<h2 id="コードの折りたたみ-x2F-展開：command-shift-x2F"><a href="#コードの折りたたみ-x2F-展開：command-shift-x2F" class="headerlink" title="コードの折りたたみ&#x2F;展開：command + shift + -&#x2F;+"></a>コードの折りたたみ&#x2F;展開：command + shift + -&#x2F;+</h2><h2 id="option-→-x2F-←で動く分だけ削除：option-delete"><a href="#option-→-x2F-←で動く分だけ削除：option-delete" class="headerlink" title="option + →&#x2F;←で動く分だけ削除：option + delete"></a>option + →&#x2F;←で動く分だけ削除：option + delete</h2><h2 id="ファイル全体のコード整形：option-command-L"><a href="#ファイル全体のコード整形：option-command-L" class="headerlink" title="ファイル全体のコード整形：option + command + L"></a>ファイル全体のコード整形：option + command + L</h2><h2 id="コードの移動：option-shift-↑-x2F-↓"><a href="#コードの移動：option-shift-↑-x2F-↓" class="headerlink" title="コードの移動：option + shift + ↑&#x2F;↓"></a>コードの移動：option + shift + ↑&#x2F;↓</h2><p>予め範囲選択しておけば複数行の移動も可能です。</p>
+<h2 id="関数の移動：command-shift-↑-x2F-↓"><a href="#関数の移動：command-shift-↑-x2F-↓" class="headerlink" title="関数の移動：command + shift + ↑&#x2F;↓"></a>関数の移動：command + shift + ↑&#x2F;↓</h2><h2 id="タブの移動：command-shift-x2F"><a href="#タブの移動：command-shift-x2F" class="headerlink" title="タブの移動：command + shift + { &#x2F; }"></a>タブの移動：command + shift + { &#x2F; }</h2><h2 id="ウインドウの移動：option-shift-tab"><a href="#ウインドウの移動：option-shift-tab" class="headerlink" title="ウインドウの移動：option + (shift) + tab"></a>ウインドウの移動：option + (shift) + tab</h2><p>shiftなしで時計回り、shiftありで反時計回りでウインドウがアクティブになります。</p>
+<h2 id="選択した対象の差分を表示：対象を選択して-command-D"><a href="#選択した対象の差分を表示：対象を選択して-command-D" class="headerlink" title="選択した対象の差分を表示：対象を選択して command + D"></a>選択した対象の差分を表示：対象を選択して command + D</h2><img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/diff.gif" class="">
+
+<h2 id="カンマ区切りの要素を交換：option-shift-command-→-x2F-←"><a href="#カンマ区切りの要素を交換：option-shift-command-→-x2F-←" class="headerlink" title="カンマ区切りの要素を交換：option + shift + command + →&#x2F;←"></a>カンマ区切りの要素を交換：option + shift + command + →&#x2F;←</h2><h2 id="下の行を持ってきて一行にする：control-shift-J"><a href="#下の行を持ってきて一行にする：control-shift-J" class="headerlink" title="下の行を持ってきて一行にする：control + shift + J"></a>下の行を持ってきて一行にする：control + shift + J</h2><h1 id="コンテキストアクション"><a href="#コンテキストアクション" class="headerlink" title="コンテキストアクション"></a>コンテキストアクション</h1><p>ショートカットとはちょっと違いますが、option + enter を入力することでIDEが状況に応じた修正案を提示してくれます。<br>注）提示されるがままに実行すると謎コードになるぞ！使われるのでなく使いこなそう！</p>
+<h2 id="インターフェイスに準拠するメンバーの実装：option-enter"><a href="#インターフェイスに準拠するメンバーの実装：option-enter" class="headerlink" title="インターフェイスに準拠するメンバーの実装：option + enter"></a>インターフェイスに準拠するメンバーの実装：option + enter</h2><img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/option-enter.gif" class="">
+
+<h2 id="存在しないクラス等の作成：option-enter"><a href="#存在しないクラス等の作成：option-enter" class="headerlink" title="存在しないクラス等の作成：option + enter"></a>存在しないクラス等の作成：option + enter</h2><img src="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/option-enter-2.gif" class="">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/" data-id="cla5y6dym0000r1g6fpxhhvci" data-title="開発中、マウスを取り上げられたときに備えて覚えておきたいこと" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/04/Mac%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A%E3%82%925%E5%9B%9E%E4%BB%A5%E4%B8%8A%E3%82%84%E3%81%A3%E3%81%A6%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Macの初期設定を5回以上やって学んだこと</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/general/">general</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/mac/" style="font-size: 10px;">mac</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/">開発中、マウスを取り上げられたときに備えて覚えておきたいこと</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/04/Mac%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A%E3%82%925%E5%9B%9E%E4%BB%A5%E4%B8%8A%E3%82%84%E3%81%A3%E3%81%A6%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8/">Macの初期設定を5回以上やって学んだこと</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/04/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/30/Mac%E3%81%A7%E7%94%9F%E7%94%A3%E6%80%A7%E3%82%92%E4%B8%8A%E3%81%92%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB%E7%BF%92%E6%85%A3%E3%81%A5%E3%81%91%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/">Macで生産性を上げるために習慣づけるべきこと</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 suzusuke<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

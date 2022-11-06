@@ -72,6 +72,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-開発中、マウスを取り上げられたときに備えて覚えておきたいこと" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-11-06T22:46:15.000Z" itemprop="datePublished">2022-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/">開発中、マウスを取り上げられたときに備えて覚えておきたいこと</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <!-- TOC -->
+<ul>
+<li><a href="#">前置き</a></li>
+<li><a href="#">覚えよ。さらば救われん</a><ul>
+<li><a href="#">intelliJのプラグインの活用：Key Promoter X</a></li>
+<li><a href="#">ショートカットの候補をリスト表示：control + T</a></li>
+<li><a href="#">ショートカットをキーワード検索：command + shift + A</a></li>
+<li><a href="#">プロジェクトに関わるすべての検索：shift 2回連続で押す</a></li>
+</ul>
+</li>
+<li><a href="#">独断と偏見のショートカット集</a><ul>
+<li><a href="#">変数名を変更する：shift + F6</a></li>
+<li><a href="#">選択文字列に合致する位置にカーソルをあてる：control + G</a></li>
+<li><a href="#">カーソルを指定方向に増やす：option 押したあとに option + ↑&#x2F;↓</a></li>
+<li><a href="#">新規ファイル作成：command + N</a></li>
+<li><a href="#">エクスプローラーにフォーカス&#x2F;表示・非表示：command + 1</a>1</li>
+</ul>
+</li>
+<li><a href="#">変数呼び出し元に遷移：command + B</a></li>
+<li><a href="#">変数呼び出し先を検索：option + F7</a><ul>
+<li><a href="#">コードの折りたたみ&#x2F;展開：command + shift + -&#x2F;+</a></li>
+<li><a href="#">option + →&#x2F;←で動く分だけ削除：option + delete</a></li>
+<li><a href="#">ファイル全体のコード整形：option + command + L</a></li>
+<li><a href="#">コードの移動：option + shift + ↑&#x2F;↓</a></li>
+<li><a href="#">関数の移動：command + shift + ↑&#x2F;↓</a></li>
+<li><a href="#">タブの移動：command + shift + { &#x2F; }</a></li>
+<li><a href="#">ウインドウの移動：option + (shift) + tab</a></li>
+<li><a href="#">選択した対象の差分を表示：対象を選択して command + D</a></li>
+<li><a href="#">カンマ区切りの要素を交換：option + shift + command + →&#x2F;←</a></li>
+<li><a href="#">下の行を持ってきて一行にする：control + shift + J</a></li>
+</ul>
+</li>
+<li><a href="#">コンテキストアクション</a><ul>
+<li><a href="#">インターフェイスに準拠するメンバーの実装：option + enter</a></li>
+<li><a href="#">存在しないクラス等の作成：option + enter</a><!-- TOC --></li>
+</ul>
+</li>
+</ul>
+<h1 id="前置き"><a href="#前置き" class="headerlink" title="前置き"></a>前置き</h1><p>実プロジェクトではIntelliJをメインに開発を進めることになると思います。</p>
+<p><img src="https://www.jetbrains.com/idea/img/idea-edu.svg" alt="intellij"></p>
+<p>基本操作はVSCodeなど他のIDEと変わることはありませんが、大きな利点として充実したショートカット機能が挙げられます。</p>
+<p>ここではそのショートカットについて何を実際に使っているか？を使用シーンをGifで示しながら列挙します。<br>（随時更新します‥ﾀﾌﾞﾝ）</p>
+<p>これらのショートカットを使いこなすことで開発スピードが上がること間違いなし！<br>また、VSCodeでも拡張機能があるみたい（<strong><strong>IntelliJ IDEA Keybindings</strong></strong>）です。<br>ぜひ活用してみてください。</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://happyhackingtimes.github.io/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/" data-id="cla5y6dym0000r1g6fpxhhvci" data-title="開発中、マウスを取り上げられたときに備えて覚えておきたいこと" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Macの初期設定を5回以上やって学んだこと" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/11/04/Mac%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A%E3%82%925%E5%9B%9E%E4%BB%A5%E4%B8%8A%E3%82%84%E3%81%A3%E3%81%A6%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8/" class="article-date">
@@ -309,6 +394,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/07/%E9%96%8B%E7%99%BA%E4%B8%AD%E3%80%81%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%92%E5%8F%96%E3%82%8A%E4%B8%8A%E3%81%92%E3%82%89%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AB%E5%82%99%E3%81%88%E3%81%A6%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8/">開発中、マウスを取り上げられたときに備えて覚えておきたいこと</a>
+          </li>
         
           <li>
             <a href="/2022/11/04/Mac%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A%E3%82%925%E5%9B%9E%E4%BB%A5%E4%B8%8A%E3%82%84%E3%81%A3%E3%81%A6%E5%AD%A6%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8/">Macの初期設定を5回以上やって学んだこと</a>
