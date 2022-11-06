@@ -621,17 +621,55 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
-  margin: 1.6em 20px;
-  text-align: center;
+  position: relative;
+  padding: 10px 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-style: italic;
+  color: #464646;
+  border-left: solid 40px #c4c4c4;
+  background: #f3f3f3;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.19);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.19);
 }
-.article-entry blockquote footer {
+.article-entry blockquote:before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: -32px;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: "\f10d";
+  font-family: FontAwesome;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 900;
+}
+.article-entry blockquote p {
+  position: relative;
+  padding: 0;
+  margin: 10px 0;
+  z-index: 3;
+  line-height: 1.7;
+}
+.article-entry blockquote cite {
+  display: block;
+  text-align: right;
+  color: #888;
+  font-size: 0.9em;
+}
+.article-entry p footer {
   font-size: 14px;
   margin: 1.6em 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-.article-entry blockquote footer cite:before {
+.article-entry p footer cite:before {
   content: "—";
   padding: 0 0.5em;
 }
