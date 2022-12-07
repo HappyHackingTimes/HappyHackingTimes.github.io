@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="canonical" href="https://happyhackingtimes.github.io/2022/11/04/macの初期設定を5回以上やって学んだこと/">
   
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-07XXV9BF5N"></script>
@@ -135,7 +136,7 @@
 
 <h2 id="成果物"><a href="#成果物" class="headerlink" title="成果物"></a>成果物</h2><p>以下で大体のセットアップをできるようにした。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/SuZu008006/workstation-setup.git</span><br><span class="line">cd workstation-setup</span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure>
-<p>【参考元】<br><a target="_blank" rel="noopener" href="https://github.com/pivotal/workstation-setup">https://github.com/pivotal/workstation-setup</a></p>
+<p>【参考元】<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/pivotal/workstation-setup">https://github.com/pivotal/workstation-setup</a></p>
 <h2 id="取り組む中で学んだこと"><a href="#取り組む中で学んだこと" class="headerlink" title="取り組む中で学んだこと"></a>取り組む中で学んだこと</h2><h3 id="homebrewの小わざ"><a href="#homebrewの小わざ" class="headerlink" title="homebrewの小わざ"></a>homebrewの小わざ</h3><ol>
 <li><p>GUIアプリのインストール<br>通常、パッケージは</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install [CUI package name]</span><br></pre></td></tr></table></figure>
@@ -163,8 +164,8 @@
 <p><strong>つまり必要ありません。</strong></p>
 <p>Mac上では、.DS_Storeファイルは基本見えないようになっていますが、Windowsなど他のOSで開くと見えてしまいます。<br>そのため、Windowsなどとデータを共有するときはこの.DS_Storeファイルは削除した方が良いです。</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://ios-docs.dev/ds_store/">https://ios-docs.dev/ds_store/</a> より抜粋</p>
-<p>dock関係の設定はここを参考にした。<br><a target="_blank" rel="noopener" href="https://do-zan.com/mac-dock-terminalcommand-settings/">https://do-zan.com/mac-dock-terminalcommand-settings/</a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://ios-docs.dev/ds_store/">https://ios-docs.dev/ds_store/</a> より抜粋</p>
+<p>dock関係の設定はここを参考にした。<br><a target="_blank" rel="external nofollow noopener noreferrer" href="https://do-zan.com/mac-dock-terminalcommand-settings/">https://do-zan.com/mac-dock-terminalcommand-settings/</a></p>
 <h3 id="pathを通す作業もできる"><a href="#pathを通す作業もできる" class="headerlink" title="pathを通す作業もできる"></a>pathを通す作業もできる</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;export PATH=&quot;[your directory]&quot;&#x27; &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
 <p>workstation-setup&#x2F;scripts&#x2F;node.sh より抜粋</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Installing nodebrew&quot;</span><br><span class="line">brew install nodebrew</span><br><span class="line"></span><br><span class="line">echo &quot;Installing stable node version&quot;</span><br><span class="line">mkdir -p ~/.nodebrew/src</span><br><span class="line">nodebrew install-binary stable</span><br><span class="line">nodebrew use stable</span><br><span class="line">echo &#x27;export PATH=&quot;$HOME/.nodebrew/current/bin:$PATH&quot;&#x27; &gt;&gt; ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line"></span><br><span class="line">echo &quot;Installing yarn&quot;</span><br><span class="line">sudo npm install -g yarn</span><br></pre></td></tr></table></figure>
@@ -172,11 +173,11 @@
 <h3 id="Githubで使うSSHキーを自動生成できるようにした"><a href="#Githubで使うSSHキーを自動生成できるようにした" class="headerlink" title="Githubで使うSSHキーを自動生成できるようにした"></a>Githubで使うSSHキーを自動生成できるようにした</h3><p>workstation-setup&#x2F;scripts&#x2F;ssh-key.sh より抜粋</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir .ssh</span><br><span class="line">cd .ssh</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line">open .</span><br></pre></td></tr></table></figure>
 <p>最後にfinderで開くようにしたので、ここからid_rsb.pubの中身をコピペすればいい。</p>
-<h3 id="figはいいぞ"><a href="#figはいいぞ" class="headerlink" title="figはいいぞ"></a>figはいいぞ</h3><p><img src="https://raw.githubusercontent.com/withfig/fig/main/static/FigBannerInverted.png#gh-dark-mode-only" alt="fig"><br>【公式URL】<a target="_blank" rel="noopener" href="https://fig.io/">https://fig.io/</a></p>
+<h3 id="figはいいぞ"><a href="#figはいいぞ" class="headerlink" title="figはいいぞ"></a>figはいいぞ</h3><p><img src="https://raw.githubusercontent.com/withfig/fig/main/static/FigBannerInverted.png#gh-dark-mode-only" alt="fig"><br>【公式URL】<a target="_blank" rel="external nofollow noopener noreferrer" href="https://fig.io/">https://fig.io/</a></p>
 <ol>
 <li>入力補完ができる<br>  <img src="https://qr.paps.jp/5K3j8" alt="補完機能"></li>
-<li>ちょっとしたスクリプトを書いて使用できる<br>  <a target="_blank" rel="noopener" href="https://fig.io/videos/workflows-video.mp4">workflow demo</a></li>
-<li>チームを作って共有もできる<br>  <img src="https://fig.io/docAssets/mission-control/create-team.png" alt="create team"><br>  【公式マニュアル】<a target="_blank" rel="noopener" href="https://fig.io/docs/guides/teams#create-a-team">https://fig.io/docs/guides/teams#create-a-team</a></li>
+<li>ちょっとしたスクリプトを書いて使用できる<br>  <a target="_blank" rel="external nofollow noopener noreferrer" href="https://fig.io/videos/workflows-video.mp4">workflow demo</a></li>
+<li>チームを作って共有もできる<br>  <img src="https://fig.io/docAssets/mission-control/create-team.png" alt="create team"><br>  【公式マニュアル】<a target="_blank" rel="external nofollow noopener noreferrer" href="https://fig.io/docs/guides/teams#create-a-team">https://fig.io/docs/guides/teams#create-a-team</a></li>
 </ol>
 <h2 id="学び"><a href="#学び" class="headerlink" title="学び"></a>学び</h2><p><del>macは壊れる</del></p>
 
@@ -299,7 +300,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2022 suzusuke<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
     </div>
   </div>
 </footer>

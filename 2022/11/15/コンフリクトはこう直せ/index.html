@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="canonical" href="https://happyhackingtimes.github.io/2022/11/15/コンフリクトはこう直せ/">
   
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-07XXV9BF5N"></script>
@@ -140,18 +141,18 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Auto-merging conflict_pattern_01</span><br><span class="line">CONFLICT (content): Merge conflict in conflict_pattern_01</span><br><span class="line">error: could not apply 1e6a683... conflict challenge</span><br><span class="line">hint: Resolve all conflicts manually, mark them as resolved with</span><br><span class="line">hint: &quot;git add/rm &lt;conflicted_files&gt;&quot;, then run &quot;git rebase --continue&quot;.</span><br><span class="line">hint: You can instead skip this commit: run &quot;git rebase --skip&quot;.</span><br><span class="line">hint: To abort and get back to the state before &quot;git rebase&quot;, run &quot;git rebase --abort&quot;.</span><br></pre></td></tr></table></figure>
 
 <h2 id="コンフリクトをなおす"><a href="#コンフリクトをなおす" class="headerlink" title="コンフリクトをなおす"></a>コンフリクトをなおす</h2><p>intellijのツールバーから<br>Git &gt; Resolve Conflicts…　を選択</p>
-<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/intellijToolBar.png" class="">
+<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/intellijToolBar.png" class>
 
 <p>適用したい変更を中央のResultコードに反映する</p>
-<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/resolveConflictsScreen.png" class="">
+<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/resolveConflictsScreen.png" class>
 
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command + K</span><br></pre></td></tr></table></figure>
-<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/commitScreen.png" class="">
+<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/commitScreen.png" class>
 <p>でコミットする</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --continue</span><br></pre></td></tr></table></figure>
 <p>し、何もなければpullできるようになる</p>
-<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/rebaseContinue.png" class="">  
+<img src="/2022/11/15/%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AF%E3%81%93%E3%81%86%E7%9B%B4%E3%81%9B/rebaseContinue.png" class>  
 
 <br>
       
@@ -264,7 +265,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2022 suzusuke<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
     </div>
   </div>
 </footer>
